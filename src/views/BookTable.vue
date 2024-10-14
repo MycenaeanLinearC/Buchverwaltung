@@ -1,6 +1,7 @@
 <script setup>
   import {computed, onMounted, ref} from 'vue'
   import {Book} from '@/Book'
+  import { useLocalStorage } from '@vueuse/core'
 
   const books = localStorage.getItem("books") ? ref(JSON.parse(localStorage.getItem("books"))) : ref([]);
   const searchString = ref('');

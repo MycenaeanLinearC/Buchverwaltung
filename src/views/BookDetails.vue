@@ -12,8 +12,7 @@
     watch(() => route.meta.mode, updateForm, {immediate: true})
 
     function updateForm() {
-        if(route.meta.mode == "new") 
-        {
+        if(route.meta.mode == "new") {
             selectedBook.value = new EmptyBook();
             editActive.value = true;
         }
@@ -120,7 +119,12 @@
         @click="saveData" 
         class="handleChangesButton"
         style="left: 65%; top: 80%;">
-            Änderungen speichern
+            <template v-if="route.meta.mode == 'existing'">
+                Änderungen Speichern
+            </template>
+            <template v-else>
+                Speichern
+            </template>
     </RouterLink>
     <button v-else
         class="handleChangesButton"

@@ -7,7 +7,6 @@ const router = createRouter({
       path: '/',
       name: 'BookTable',
       component: () => import('../views/BookTable.vue')
-      //component: BookTable
     },
     {
       path: '/details/:title/:id',
